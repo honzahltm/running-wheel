@@ -24,7 +24,7 @@ data <- data %>%
 # 4. Souhrn po 10min blocích (pro graf)
 souhrn <- data %>%
   group_by(Time_10min) %>%
-  summarise(Suma_distance_m = sum(Distance, na.rm = TRUE)) %>%
+  summarise(Sum_distance_m = sum(Distance, na.rm = TRUE)) %>%
   arrange(Time_10min)
 
 # 5. Filtrování podle intervalu
@@ -57,4 +57,5 @@ ggplot(souhrn_filtered, aes(x = Time_10min, y = Sum_distance_m)) +
        y = "Distance run [m]") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
 
